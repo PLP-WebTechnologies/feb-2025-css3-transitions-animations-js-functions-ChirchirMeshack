@@ -1,0 +1,318 @@
+/* --- Base Styles & Variables --- */
+:root {
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #28a745; /* Green */
+    --light-bg: #f8f9fa;
+    --light-text: #333;
+    --dark-bg: #343a40;
+    --dark-text: #f8f9fa;
+    --card-bg-light: #ffffff;
+    --card-bg-dark: #495057;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--light-text);
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+/* --- Dark Mode Theme --- */
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.dark-mode header {
+    background-color: #212529;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+body.dark-mode nav a { color: #e9ecef; }
+body.dark-mode nav a:hover { color: #fff; }
+body.dark-mode .logo { color: #fff;}
+
+body.dark-mode section {
+    background-color: var(--dark-bg); /* Keep sections matching body */
+    border-bottom: 1px solid #495057;
+}
+
+body.dark-mode .card {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+body.dark-mode .card h3 { color: var(--primary-color);}
+
+body.dark-mode button {
+    background-color: #6c757d; /* Darker gray */
+    color: var(--dark-text);
+    border: 1px solid #6c757d;
+}
+body.dark-mode button:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+body.dark-mode button.cta-button {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+     color: var(--dark-text); /* Ensure text contrast */
+}
+body.dark-mode button.cta-button:hover {
+    background-color: #218838; /* Darker green */
+    border-color: #1e7e34;
+}
+body.dark-mode .theme-button.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+
+/* --- General Layout & Components --- */
+header {
+    background-color: #ffffff;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color var(--transition-speed) ease;
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.kenya-flag { font-size: 0.8em; vertical-align: middle;}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    transition: color var(--transition-speed) ease;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    padding: 2.5rem 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--light-bg); /* Ensure sections match body */
+    border-bottom: 1px solid #eee;
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+section:last-of-type {
+    border-bottom: none;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; margin-bottom: 2rem; }
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    /* CSS Transition */
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: translateY(-2px); /* Subtle lift */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button {
+    background-color: var(--secondary-color); /* Green */
+    font-size: 1.1em;
+    padding: 15px 30px;
+}
+.cta-button:hover {
+    background-color: #218838; /* Darker green */
+}
+
+.content-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem auto;
+    display: block;
+    /* CSS Transition on Image */
+    transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+}
+.content-image:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+/* --- Section Specific Styles --- */
+#hero {
+    background: url('https://via.placeholder.com/1200x500.png?text=Kenya+Landscape+/+Community') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 6rem 1rem;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden; /* Ensure overlay fits */
+}
+#hero::before { /* Dark overlay for text contrast */
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.hero-content {
+    position: relative; /* Ensure text is above overlay */
+    z-index: 2;
+}
+#hero h1 { color: white; }
+
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: var(--card-bg-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+.card img {
+    max-width: 100%;
+    height: 150px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensure image covers area */
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+#preferences .theme-buttons button {
+    background-color: #e9ecef;
+    color: #333;
+    border: 1px solid #ced4da;
+}
+#preferences .theme-buttons button:hover {
+    background-color: #d6dce1;
+}
+#preferences .theme-buttons button.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    font-weight: bold;
+}
+
+.status-message {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #6c757d; /* Muted color */
+}
+
+
+/* --- CSS Animations --- */
+
+/* Pulse animation for CTA button */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.5); /* Match --secondary-color */
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px 20px rgba(40, 167, 69, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+    }
+}
+
+.cta-button {
+    /* Apply the pulse animation */
+    animation: pulse 2.5s infinite ease-out;
+}
+/* Optional: Pause animation on hover */
+.cta-button:hover {
+    animation-play-state: paused;
+}
+
+
+/* Fade-in animation for impact story */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.impact-story {
+    opacity: 0; /* Start hidden */
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #e2f0ff; /* Light blue background */
+    border-left: 5px solid var(--primary-color);
+    border-radius: 4px;
+}
+body.dark-mode .impact-story {
+    background-color: #4a5a6a;
+    border-left-color: #87ceeb; /* Lighter blue for dark mode */
+}
+
+/* Class added by JS to trigger animation */
+.impact-story.animate {
+    animation: fadeIn 0.8s ease-out forwards; /* 'forwards' keeps the end state */
+}
