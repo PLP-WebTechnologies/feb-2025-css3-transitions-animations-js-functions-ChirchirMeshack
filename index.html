@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giving.org Kenya - Making a Difference Together</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Giving.org <span class="kenya-flag">🇰🇪</span></div>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#projects">Our Work</a></li>
+                <li><a href="#get-involved">Get Involved</a></li>
+                <li><a href="#preferences">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Empowering Communities Across Kenya</h1>
+                <p>Your contribution fuels hope and creates lasting change. Join us.</p>
+                <button class="cta-button donate-button">Donate Now</button>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>Our Mission</h2>
+            <p>Giving.org Kenya is dedicated to improving the lives of underprivileged communities through sustainable projects in education, healthcare, and economic empowerment. We believe in local solutions and collaborative action.</p>
+            <img src="https://via.placeholder.com/600x300.png?text=Kenyan+Community+Project" alt="Placeholder image of community work" class="content-image">
+        </section>
+
+        <section id="projects">
+            <h2>Our Key Projects</h2>
+            <div class="project-cards">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200.png?text=Education+Initiative" alt="Children learning">
+                    <h3>Education Access</h3>
+                    <p>Providing resources, scholarships, and infrastructure for better learning environments.</p>
+                </div>
+                <div class="card">
+                     <img src="https://via.placeholder.com/300x200.png?text=Health+Outreach" alt="Medical supplies">
+                    <h3>Health & Wellness</h3>
+                    <p>Running mobile clinics and health awareness programs in remote areas.</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200.png?text=Skills+Training" alt="People working">
+                    <h3>Empowerment</h3>
+                    <p>Offering vocational training and small business support for sustainable livelihoods.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="get-involved">
+            <h2>Get Involved</h2>
+            <p>Change starts with you. Whether you donate, volunteer, or spread the word, your support matters.</p>
+            <button class="donate-button">Make a Donation</button>
+            <button id="triggerAnimationBtn">See Impact Story</button>
+            <div id="impactStoryText" class="impact-story">
+                <p>Thanks to donors like you, Aisha was able to complete her secondary education and now dreams of becoming a nurse!</p>
+                 </div>
+        </section>
+
+         <section id="preferences">
+            <h2>Website Preferences</h2>
+            <p>Choose your preferred viewing theme:</p>
+            <div class="theme-buttons">
+                <button data-theme="light" class="theme-button">Light Mode</button>
+                <button data-theme="dark" class="theme-button">Dark Mode</button>
+                </div>
+            <p id="preferenceStatus" class="status-message"></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Giving.org Kenya. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
